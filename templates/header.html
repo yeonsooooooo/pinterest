@@ -1,4 +1,4 @@
- <div style="height: 10rem; background-color : #38df81; border-radius: 1rem; margin: 2rem;">
+ <div style="height: 10rem; background-color : lightblue; border-radius: 1rem; margin: 2rem;">
     <div style="text-align: center">
         <div>
             <h1 style="font-family: 'Kanit', sans-serif;">Pragmatic</h1>
@@ -14,6 +14,9 @@
             {% else %}
                 <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
                     <span>logout</span>
+                </a>
+                <a href="{% url 'accountapp:detail' pk=user.pk %}?next={{ request.path }}">
+                    <span>MyPage</span>
                 </a>
             {% endif %}
         </div>

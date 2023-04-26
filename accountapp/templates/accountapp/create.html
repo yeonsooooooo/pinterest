@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 
 {% block content %}
     <div style="text-align: center">
         <form action="{% url 'accountapp:create' %}" method="post">
             {%  csrf_token %}
 {#            이렇게 해주면 장고 내의 자동적으로 form 부분에 기존의 가지고 있던 것을 출력해줌. 기본 회원가입 형태.#}
-            {{ form }}
-            <input type="submit" class="btn btn primary">
+{#            {{ form }}#}
+            {% bootstrap_form form %}
+            <input type="submit" class="btn btn-dart rounded-pill col-6 mt-3">
         </form>
     </div>
 {% endblock %}
