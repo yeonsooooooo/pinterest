@@ -10,6 +10,12 @@
             <h2>
                 {{ target_user.username }}
             </h2>
+{#            본인 페이지에 본인이 들어왔을 때 수정이 가능하게 함#}
+            <a href="{% url 'accountapp:update' pk=user.pk %}">
+                <p>
+                    Change Info
+                </p>
+            </a>
         </div>
     </div>
 {% endblock %}
