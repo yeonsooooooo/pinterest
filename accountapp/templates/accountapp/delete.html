@@ -1,0 +1,19 @@
+{%  extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <div>
+        <div>
+            <h4>Quit</h4>
+        </div>
+        <div style="text-align: center; margin: 4rem auto; max-width: 500px ">
+            <form action="{% url 'accountapp:delete' pk=target_user.pk %}" method="post">
+                {% csrf_token %}
+{#                {{ form }}#}
+                {% bootstrap_form form %}
+                <input type="submit" class="btn btn-danger rounded-pill" col-6 mt-4>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
